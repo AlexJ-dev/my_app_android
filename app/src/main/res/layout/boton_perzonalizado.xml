@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:id="@+id/customButton"
+        android:layout_width="316dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_boton_personalizado"
+        android:text="Boton"
+        android:textColor="#F5F5DC"
+        android:textSize="14sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:fontFamily="@font/inter_medium" />
+
+</merge>
