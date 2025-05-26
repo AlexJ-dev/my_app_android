@@ -1,0 +1,32 @@
+# Normaliza todos los archivos de texto al hacer commit
+* text=auto
+
+# Fuerza LF para archivos de código fuente
+*.java text eol=lf
+*.kt   text eol=lf
+*.xml  text eol=lf
+*.gradle text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.txt  text eol=lf
+
+# Archivos de configuración de Android Studio
+*.iml  text eol=lf
+*.pro  text eol=lf
+
+# Ignora binarios (no normalizar)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.ttf binary
+*.otf binary
+*.jar binary
+*.keystore binary
+
+# Evita problemas con archivos shell (si los usas)
+*.sh text eol=lf
