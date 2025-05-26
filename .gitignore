@@ -1,15 +1,31 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Archivos y carpetas generados automáticamente
+.gradle/
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Archivos personales y de configuración local
 local.properties
+*.iml
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs y backups
+*.log
+*.bak
+*.swp
+
+# Android Studio navigation editor
+.navigation/
+
+# Configuración del emulador y entorno de usuario
+.cache/
+output.json
+
+# Evita subir archivos de test automáticos generados
+test-output/
+
