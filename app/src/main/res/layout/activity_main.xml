@@ -3,12 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beige_background"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/barra"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/imagen_logo" />
+    </LinearLayout>
 
     <include
         layout="@layout/boton_perzonalizado"
         android:id="@+id/btnPrueba"
-        android:text="Prueba"
-        />
+        android:text="Prueba" />
 
 </LinearLayout>
