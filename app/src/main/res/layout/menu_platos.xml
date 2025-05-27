@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/layoutCategorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Ejemplo de botones de categoría -->
+        <Button
+            android:id="@+id/btnGeneral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General"
+            android:backgroundTint="#BD011E"
+            android:textColor="#F5F5DC"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnParrilla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parrillas"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnBebidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bebidas" />
+    </LinearLayout>
+</HorizontalScrollView>
