@@ -41,42 +41,43 @@
             </LinearLayout>
 
             <!-- Filtros -->
+
+            <!-- Título -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
                 android:gravity="center"
-                android:layout_marginTop="12dp">
+                android:orientation="horizontal">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All"
-                    android:backgroundTint="#EDEDED" />
+                    android:backgroundTint="#EDEDED"
+                    android:text="All" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Parrillas"
+                    android:layout_marginStart="8dp"
                     android:backgroundTint="#FFFFFF"
-                    android:layout_marginStart="8dp" />
+                    android:text="Parrillas" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Piqueos"
+                    android:layout_marginStart="8dp"
                     android:backgroundTint="#FFFFFF"
-                    android:layout_marginStart="8dp" />
+                    android:text="Piqueos" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alitas"
+                    android:layout_marginStart="8dp"
                     android:backgroundTint="#FFFFFF"
-                    android:layout_marginStart="8dp" />
+                    android:text="Alitas" />
             </LinearLayout>
 
-            <!-- Título -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

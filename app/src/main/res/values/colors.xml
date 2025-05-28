@@ -10,4 +10,5 @@
     <color name="beige_background">#F5F5DC</color>
     <color name="red_background">#BD011E</color>
     <color name="yellow_backgorund">#FFDE59</color>
+    <color name="gray_background">#5C5F6A</color>
 </resources>
