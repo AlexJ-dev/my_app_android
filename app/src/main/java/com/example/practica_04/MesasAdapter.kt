@@ -9,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 data class Mesa(val numero: Int, val mozo: String, val estado: String)
 
-class MesasAdapter(private val mesas: List<Mesa>) : RecyclerView.Adapter<MesasAdapter.MesaViewHolder>() {
+class MesasAdapter(
+    private val mesas: List<Mesa>,
+    private val onMesaClick: (Mesa) -> Unit
+    ) : RecyclerView.Adapter<MesasAdapter.MesaViewHolder>() {
 
     inner class MesaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textMesa: TextView = view.findViewById(R.id.textMesa)
@@ -28,7 +31,11 @@ class MesasAdapter(private val mesas: List<Mesa>) : RecyclerView.Adapter<MesasAd
         holder.textMozo.text = "Mozo: ${mesa.mozo}"
         holder.textEstado.text = "Estado: ${mesa.estado}"
         holder.textEstado.setTextColor(if (mesa.estado == "Ocupada") Color.parseColor("#FF5722") else Color.parseColor("#4CAF50"))
-    }
+
+        holder.itemView.setOnClickListener {
+            onMesaClick(mesa)
+        }
+        }
 
     override fun getItemCount(): Int = mesas.size
 }

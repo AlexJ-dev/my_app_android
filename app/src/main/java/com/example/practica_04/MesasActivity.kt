@@ -1,11 +1,11 @@
 package com.example.practica_04
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MesasActivity : AppCompatActivity() {
@@ -25,6 +25,10 @@ class MesasActivity : AppCompatActivity() {
             Mesa(i + 1, if (i % 2 == 0) "Ana" else "Juan", if (i % 3 == 0) "Ocupada" else "Disponible")
         }
 
-        recyclerMesas.adapter = MesasAdapter(mesasList)
+        recyclerMesas.adapter = MesasAdapter(mesasList) { mesaSeleccionada ->
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putExtra("mesaNumero", mesaSeleccionada.numero) // Pasamos el número de la mesa
+            startActivity(intent)
+        }
     }
 }

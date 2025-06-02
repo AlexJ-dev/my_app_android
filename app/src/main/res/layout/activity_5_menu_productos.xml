@@ -2,9 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/beige_background">
 
     <include
         layout="@layout/componente_barra"/>
+    <TextView
+        android:id="@+id/textMesaInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <!-- Scroll Horizontal de Categorías -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
 
 </LinearLayout>
+
+
+
+
