@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige_background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="30dp">
+
+    <include
+        android:id="@+id/textLogin"
+        layout="@layout/componente_imagen_logo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <include
+            layout="@layout/componente_lineas"/>
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/inputLogUser"
+        layout="@layout/componente_input"/>
+
+    <include
+        android:id="@+id/inputLogPass"
+        layout="@layout/componente_input"/>
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Te olvidastes tu contraseña?"
+        android:textColor="@color/gray_background"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp" />
+    <include
+        android:id="@+id/btnLogin"
+        layout="@layout/componente_boton_perzonalizado"/>
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No tienes cuenta? Registrate"
+        android:textColor="@color/gray_background"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"/>
+</LinearLayout>

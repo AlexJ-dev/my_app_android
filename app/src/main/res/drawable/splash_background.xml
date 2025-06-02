@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo de color -->
+    <item android:drawable="@color/beige_background" />
+
+    <!-- Imagen del logo centrado -->
+    <item>
+        <bitmap
+            android:src="@drawable/logo2"
+            android:gravity="center" />
+    </item>
+
+    <!-- Botón simulado como imagen -->
+    <item>
+        <bitmap
+            android:src="@drawable/text_splash"
+            android:gravity="bottom|center_horizontal"
+            android:bottom="100dp" />
+    </item>
+</layer-list>
+

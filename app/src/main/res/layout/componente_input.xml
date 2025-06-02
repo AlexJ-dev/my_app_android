@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="15dp">
+
     <TextView
         android:id="@+id/labelText"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Texto"
         android:textColor="@color/gray_background"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_marginBottom="4dp"
-        android:fontFamily="@font/inter_medium"/>
+        android:fontFamily="@font/inter_medium" />
 
     <EditText
         android:id="@+id/editTextInput"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_input_perzonalizado"
         android:padding="10dp"
         android:inputType="text"
-        android:layout_marginBottom="24dp"/>
-</merge>
+        android:layout_marginBottom="24dp" />
+
+</LinearLayout>
