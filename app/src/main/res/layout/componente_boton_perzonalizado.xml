@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp">
+
+
 
     <Button
         android:id="@+id/customButton"
-        android:layout_width="316dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_boton_personalizado"
         android:text="Boton"
         android:textColor="#F5F5DC"
@@ -15,4 +20,5 @@
         android:paddingBottom="20dp"
         android:fontFamily="@font/inter_medium" />
 
-</merge>
+
+</LinearLayout>

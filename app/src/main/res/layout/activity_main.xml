@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <include
-        layout="@layout/barra"/>
+        layout="@layout/componente_barra"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,11 +16,11 @@
         android:padding="16dp"
         android:orientation="vertical">
 
-        <include layout="@layout/imagen_logo" />
+        <include layout="@layout/componente_imagen_logo" />
     </LinearLayout>
 
     <include
-        layout="@layout/boton_perzonalizado"
+        layout="@layout/componente_boton_perzonalizado"
         android:id="@+id/btnPrueba"
         android:text="Prueba" />
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/beige_background"
+    android:gravity="center_horizontal">
+
+    <include
+        layout="@layout/componente_barra"/>
+
+    <include
+        android:id="@+id/textMenuMesas"
+        layout="@layout/componente_imagen_logo"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMesas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#F5F5F5" />
+</LinearLayout>
