@@ -26,7 +26,7 @@ class MesasActivity : AppCompatActivity() {
         }
 
         recyclerMesas.adapter = MesasAdapter(mesasList) { mesaSeleccionada ->
-            val intent = Intent(this, CategoryActivity::class.java)
+            val intent = Intent(this, SalaActivity::class.java)
             intent.putExtra("mesaNumero", mesaSeleccionada.numero) // Pasamos el número de la mesa
             startActivity(intent)
         }

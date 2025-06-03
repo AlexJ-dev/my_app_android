@@ -4,15 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/beige_background"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="Volver"
+        android:layout_marginVertical="12dp"
+        android:src="@drawable/back_icon" />
 
     <include
+        android:id="@+id/textSala"
         layout="@layout/componente_imagen_logo">
     </include>
 
-
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMensajes"
+        android:layout_width="match_parent"
+        android:background="@color/beige_background"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp"
+        android:layout_gravity="center"/>
     <include
+        android:id="@+id/customButtonLayout"
         layout="@layout/componente_boton_perzonalizado"/>
 
 </LinearLayout>
