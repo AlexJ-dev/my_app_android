@@ -4,11 +4,13 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica_04.databinding.Activity6PedidoBinding
@@ -25,6 +27,9 @@ class PedidoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = Activity6PedidoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val textPedido =  findViewById<View>(R.id.textPedido)
+        textPedido?.findViewById<TextView>(R.id.texto)?.text="N°003211"
 
         val btnEliminarTodo = findViewById<Button>(R.id.btnEliminarTodo)
         val btnEnviarPedido = findViewById<Button>(R.id.btnEnviarPedido)
@@ -43,10 +48,12 @@ class PedidoActivity : AppCompatActivity() {
         }
 
         val pedidosList = mutableListOf(
-            Pedido("Bife de chorizo", "Sin ensalada", 1, "Comidas"),
-            Pedido("Parrilla de pollo", "Bien cocido", 2, "Comidas"),
-            Pedido("Jugo de maracuyá", "Sin azúcar", 1, "Bebidas"),
-            Pedido("Margarita", "Poco alcohol", 1, "Bebidas")
+            Pedido("Parrilla de Pollo", "Sin ensalada", 1, "Comidas"),
+            Pedido("Parrilla de Cerdo", "Bien cocido", 2, "Comidas"),
+            Pedido("Tequeños de queso", "Normal", 1, "Comidas"),
+            Pedido("Salchipapa Especial", "Normal", 1, "Comidas"),
+            Pedido("Jarra de Maracuya", "Helada", 1, "Bebidas"),
+            Pedido("Mojito Clasico", "Poco alcohol", 4, "Bebidas")
         )
         val comidas = pedidosList.filter { it.categoria == "Comidas" }.toMutableList()
         val bebidas = pedidosList.filter { it.categoria == "Bebidas" }.toMutableList()
@@ -55,13 +62,14 @@ class PedidoActivity : AppCompatActivity() {
         comidasAdapter = PedidoAdapter(comidas)
         bebidasAdapter = PedidoAdapter(bebidas)
 
+        // Aquí agregamos la configuración de los RecyclerView
         findViewById<RecyclerView>(R.id.recyclerComidas).apply {
-            layoutManager = LinearLayoutManager(this@PedidoActivity)
+            layoutManager = GridLayoutManager(this@PedidoActivity, 2) // 2 columnas
             adapter = comidasAdapter
         }
 
         findViewById<RecyclerView>(R.id.recyclerBebidas).apply {
-            layoutManager = LinearLayoutManager(this@PedidoActivity)
+            layoutManager = GridLayoutManager(this@PedidoActivity, 2) // 2 columnas
             adapter = bebidasAdapter
         }
 
@@ -76,13 +84,16 @@ class PedidoActivity : AppCompatActivity() {
             bebidasAdapter.clearPedidos()
         }
 
-        findViewById<Button>(R.id.btnEnviarPedido).setOnClickListener {
-            Toast.makeText(this, "Pedido enviado correctamente", Toast.LENGTH_SHORT).show()
+        findViewById<RecyclerView>(R.id.recyclerComidas).apply {
+            layoutManager = LinearLayoutManager(this@PedidoActivity, LinearLayoutManager.VERTICAL, false)
+            adapter = comidasAdapter
         }
 
-        findViewById<Button>(R.id.btnAgregarProductos).setOnClickListener {
-            startActivity(Intent(this, CategoryActivity::class.java))
+        findViewById<RecyclerView>(R.id.recyclerBebidas).apply {
+            layoutManager = LinearLayoutManager(this@PedidoActivity, LinearLayoutManager.VERTICAL, false)
+            adapter = bebidasAdapter
         }
+
     }
 
     private fun getCurrentDate(): String {

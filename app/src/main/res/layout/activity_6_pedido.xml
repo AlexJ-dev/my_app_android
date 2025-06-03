@@ -24,32 +24,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:padding="12dp"
         android:gravity="center"
-        android:padding="12dp">
+        android:layout_marginBottom="8dp"> <!-- SEPARA EL TEXTO DEL RECYCLERVIEW -->
 
         <TextView
             android:id="@+id/textMesaNumero"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Mesa #12"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/textMozo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Mozo: Juan Pérez"
             android:textSize="16sp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/textFecha"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Fecha: 03/06/2025"
             android:textSize="16sp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:gravity="center"/>
     </LinearLayout>
+
 
     <!-- RecyclerView para mostrar los pedidos -->
     <TextView
