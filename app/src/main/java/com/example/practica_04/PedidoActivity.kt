@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,11 @@ class PedidoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = Activity6PedidoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val btnBack = findViewById<ImageButton>(R.id.btnBack)
+        btnBack.setOnClickListener {
+            onBackPressed()
+        }
 
         val textPedido =  findViewById<View>(R.id.textPedido)
         textPedido?.findViewById<TextView>(R.id.texto)?.text="N°003211"
