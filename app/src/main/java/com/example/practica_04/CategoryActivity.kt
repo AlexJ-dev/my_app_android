@@ -46,7 +46,7 @@ class CategoryActivity : AppCompatActivity() {
         btnPedido.text = "Ver Pedido"
         btnPedido.visibility = View.VISIBLE
         btnPedido.setOnClickListener {
-            val intent = Intent(this, PedidoActivity::class.java)
+            val intent = Intent(this, misPedidosActivity::class.java)
             startActivity(intent)
         }
 
