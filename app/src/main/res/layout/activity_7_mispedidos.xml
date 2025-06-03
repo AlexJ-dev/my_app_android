@@ -132,7 +132,7 @@
                             android:layout_marginBottom="8dp" />
 
                         <Button
-                            android:id="@+id/btnAgregar1"
+                            android:id="@+id/btnFactura"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Factura"
@@ -218,7 +218,7 @@
                             android:layout_marginBottom="8dp"/>
 
                         <Button
-                            android:id="@+id/btnAgregar2"
+                            android:id="@+id/btnFactura2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Factura"
