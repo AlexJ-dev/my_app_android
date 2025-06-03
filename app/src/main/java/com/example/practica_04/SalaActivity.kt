@@ -1,12 +1,15 @@
 package com.example.practica_04
 
-import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.os.Bundle
+import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationSet
 import android.view.animation.TranslateAnimation
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 
@@ -16,38 +19,52 @@ class SalaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_4_sala_espera)
 
-        val btnMenu = findViewById<Button>(R.id.customButton)
-
-        btnMenu.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)  // Lanza la nueva actividad
-        }
-
+        // Botón de regreso
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         btnBack.setOnClickListener {
             onBackPressed()
         }
+        val textSalaEspera =  findViewById<View>(R.id.textSala)
+            textSalaEspera?.findViewById<TextView>(R.id.texto)?.text="Sala de Espera"
 
-        val fadeIn = AlphaAnimation(0f, 1f)
-        fadeIn.duration = 1500 // Duración de la animación en milisegundos
-        fadeIn.repeatMode = AlphaAnimation.REVERSE // Hace que la animación vuelva a su estado original
-        fadeIn.repeatCount = AlphaAnimation.INFINITE // Hace que la animación se repita infinitamente
+        // Animaciones para el mensaje alentador
+        val fadeIn = AlphaAnimation(0f, 1f).apply {
+            duration = 1500
+            repeatMode = AlphaAnimation.REVERSE
+            repeatCount = AlphaAnimation.INFINITE
+        }
 
-        // Crear la animación de movimiento (desplazarse hacia abajo en el eje Y)
-        val move = TranslateAnimation(0f, 0f, -100f, 0f) // Movimiento de -100px en el eje Y
-        move.duration = 1500
-        move.repeatMode = TranslateAnimation.REVERSE
-        move.repeatCount = TranslateAnimation.INFINITE
+        val move = TranslateAnimation(0f, 0f, -100f, 0f).apply {
+            duration = 1500
+            repeatMode = TranslateAnimation.REVERSE
+            repeatCount = TranslateAnimation.INFINITE
+        }
 
-        // Combinar ambas animaciones
-        val animationSet = AnimationSet(true)
-        animationSet.addAnimation(fadeIn)
-        animationSet.addAnimation(move)
+        val animationSet = AnimationSet(true).apply {
+            addAnimation(fadeIn)
+            addAnimation(move)
+        }
+        // Lista de mensajes motivacionales con emojis
+        val mensajesList = listOf(
+            Mensaje("😊 Siempre Sonríe", "😊"),
+            Mensaje("👂 Escucha con Atención", "👂"),
+            Mensaje("📖 Conoce la carta", "📖"),
+            Mensaje("📝 Organízate bien", "📝"),
+            Mensaje("👀 Observa a los clientes", "👀")
+        )
 
-        // Obtener el TextView
-        val mensajeAlentador = findViewById<TextView>(R.id.mensajeAlentador)
+        // Configuración del RecyclerView para los mensajes motivacionales
+        val recyclerMensajes = findViewById<RecyclerView>(R.id.recyclerMensajes)
+        recyclerMensajes.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerMensajes.adapter = MensajesAdapter(mensajesList)
+        recyclerMensajes.clipToPadding = false
 
-        // Iniciar la animación combinada
-        mensajeAlentador.startAnimation(animationSet)
+        // Configurar el botón para ir al menú de categorías
+        val btnMenu = findViewById<Button>(R.id.customButton)
+        btnMenu.text = "Iniciar Pepido"
+        btnMenu.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

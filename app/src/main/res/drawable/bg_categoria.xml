@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado seleccionado -->
     <item android:state_selected="true">
-        <shape android:color="#FFDE59"/>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/red_background"/> <!-- Fondo rojo -->
+            <corners android:radius="8dp"/> <!-- Bordes redondeados -->
+            <stroke android:width="2dp" android:color="@color/red_background"/> <!-- Borde negro -->
+        </shape>
     </item>
+
+    <!-- Estado normal -->
     <item>
-        <shape android:color="#FFFFFF"/>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/beige_background"/> <!-- Fondo gris -->
+            <corners android:radius="8dp"/>
+            <stroke android:width="2dp" android:color="@color/red_background"/> <!-- Borde negro -->
+        </shape>
     </item>
 </selector>

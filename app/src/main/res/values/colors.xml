@@ -11,4 +11,6 @@
     <color name="red_background">#BD011E</color>
     <color name="yellow_background">#FFDE59</color>
     <color name="gray_background">#5C5F6A</color>
+    <color name="green_background">#A4FFBC</color>
+    <color name="green_second">#03FF46</color>
 </resources>

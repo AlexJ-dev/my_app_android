@@ -15,8 +15,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_1_login)
 
+        val textMenuMesa =  findViewById<View>(R.id.textLogin)
+        textMenuMesa?.findViewById<TextView>(R.id.texto)?.text="Login"
         mapOf(
-            R.id.textLogin to "Login",
             R.id.inputLogUser to "Usuario",
             R.id.inputLogPass to "Contraseña"
         ).forEach { (parentId, text) ->

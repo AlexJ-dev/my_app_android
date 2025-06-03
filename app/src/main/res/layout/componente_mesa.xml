@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/mesa_border"
-    android:padding="16dp"
+    android:padding="8dp"
     android:gravity="center"
     android:layout_margin="8dp">
 
@@ -20,22 +20,22 @@
         android:id="@+id/textMesa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="8dp"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="14dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textMozo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="8dp"
         android:textColor="#555555"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textEstado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:textSize="10sp" />
 </LinearLayout>

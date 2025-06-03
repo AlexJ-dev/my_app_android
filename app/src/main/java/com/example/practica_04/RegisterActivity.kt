@@ -15,8 +15,9 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_2_registro)
 
         // Asignación de textos a las vistas
+        val textMenuMesa =  findViewById<View>(R.id.textRegister)
+        textMenuMesa?.findViewById<TextView>(R.id.texto)?.text="Registro"
         mapOf(
-            R.id.textRegister to "Registro",
             R.id.inputResName to "Nombre",
             R.id.inputResLastName to "Apellido",
             R.id.inputResPass to "Contraseña",

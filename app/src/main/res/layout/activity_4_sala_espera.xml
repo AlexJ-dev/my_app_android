@@ -1,48 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beige_background">
+    android:orientation="vertical"
+    android:background="@color/beige_background"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="65dp"
-        android:layout_height="57dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:contentDescription="Volver"
+        android:layout_marginVertical="12dp"
         android:src="@drawable/back_icon" />
 
-    <LinearLayout
-        android:id="@+id/centerContainer"
+    <include
+        android:id="@+id/textSala"
+        layout="@layout/componente_imagen_logo">
+    </include>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMensajes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <include layout="@layout/componente_imagen_logo" />
-
-        <TextView
-            android:id="@+id/mensajeAlentador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:text="¡Tú puedes, mozo! 💪"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
-    </LinearLayout>
-
+        android:background="@color/beige_background"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp"
+        android:layout_gravity="center"/>
     <include
         android:id="@+id/customButtonLayout"
-        layout="@layout/componente_boton_perzonalizado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"/>
+        layout="@layout/componente_boton_perzonalizado"/>
 
-</RelativeLayout>
+</LinearLayout>
