@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:gravity="center"
     android:background="#F5F5DC">
 
     <ImageButton
@@ -20,12 +21,104 @@
         android:id="@+id/textPedido"
         layout="@layout/componente_imagen_logo"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textMesaNumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/textMozo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/textFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
     <!-- RecyclerView para mostrar los pedidos -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comidas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPedidos"
+        android:id="@+id/recyclerComidas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingTop="16dp"
-        android:layout_gravity="center"/>
+        android:paddingBottom="8dp"/>
+
+    <!-- RecyclerView para bebidas -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bebidas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBebidas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnEliminarTodo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Eliminar Todo"
+            android:fillViewport="true"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/red_background"
+            />
+
+        <Button
+            android:id="@+id/btnEnviarPedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enviar Pedido"
+            android:fillViewport="true"
+            android:backgroundTint="@color/green_second"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/btnAgregarProductos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Agregar Items"
+            android:fillViewport="true"
+            android:backgroundTint="@color/yellow_background"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
 </LinearLayout>

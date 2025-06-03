@@ -1,22 +1,22 @@
 package com.example.practica_04
 
-import android.app.AlertDialog
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica_04.databinding.ItemPedidoBinding
 
-class PedidoAdapter(private val pedidos: List<Pedido>) : RecyclerView.Adapter<PedidoAdapter.ViewHolder>() {
+class PedidoAdapter(private val pedidos: MutableList<Pedido>) : RecyclerView.Adapter<PedidoAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemPedidoBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(pedido: Pedido) {
+        fun bind(pedido: Pedido, position: Int) {
             binding.textNombre.text = pedido.nombre
             binding.textEspecificacion.text = pedido.especificacion
             binding.textCantidad.text = "Cantidad: ${pedido.cantidad}"
 
-            binding.btnEliminar.setOnClickListener { showModal(binding.root.context, "¿Está seguro de eliminar el pedido?", "Eliminar") }
-            binding.btnEnviar.setOnClickListener { showModal(binding.root.context, "¿Está seguro de enviar este pedido?", "Enviar") }
+            // Eliminar plato directamente al presionar el botón ❌
+            binding.btnEliminarPlato.setOnClickListener {
+                removePedido(position)
+            }
         }
     }
 
@@ -26,30 +26,21 @@ class PedidoAdapter(private val pedidos: List<Pedido>) : RecyclerView.Adapter<Pe
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(pedidos[position])
+        holder.bind(pedidos[position], position)
     }
 
     override fun getItemCount(): Int = pedidos.size
 
-    private fun showModal(context: Context, mensaje: String, accion: String) {
-        val dialogBuilder = AlertDialog.Builder(context)
-        dialogBuilder.setMessage(mensaje)
-            .setPositiveButton(accion) { dialog, _ ->
-                showConfirmationModal(context, "$accion correctamente")
-                dialog.dismiss()
-            }
-            .setNegativeButton("Cancelar") { dialog, _ -> dialog.dismiss() }
-
-        val dialog = dialogBuilder.create()
-        dialog.show()
+    // Método para eliminar un solo pedido
+    private fun removePedido(position: Int) {
+        pedidos.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, pedidos.size)
     }
 
-    private fun showConfirmationModal(context: Context, mensaje: String) {
-        val dialogBuilder = AlertDialog.Builder(context)
-        dialogBuilder.setMessage(mensaje)
-            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-
-        val dialog = dialogBuilder.create()
-        dialog.show()
+    // Método para eliminar todos los pedidos
+    fun clearPedidos() {
+        pedidos.clear()
+        notifyDataSetChanged()
     }
 }
