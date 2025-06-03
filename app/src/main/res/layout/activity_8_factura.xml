@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5DC">
+
+    <!-- Botón retroceder arriba a la izquierda -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="Volver"
+        android:layout_marginVertical="12dp"
+        android:src="@drawable/back_icon" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fondodecarta"
+            android:contentDescription="Imagen principal" />
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/buttonEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:backgroundTint="#05F61A"
+        android:drawableLeft="@drawable/aspa"
+        android:drawablePadding="8dp"
+        android:text="Enviar"
+        android:textSize="12sp" />
+
+</FrameLayout>

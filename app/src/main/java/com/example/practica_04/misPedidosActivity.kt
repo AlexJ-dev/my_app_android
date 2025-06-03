@@ -29,6 +29,16 @@ class misPedidosActivity : AppCompatActivity(){
             val intent = Intent(this, PedidoActivity::class.java)
             startActivity(intent)
         }
+        val btnAgregar = findViewById<Button>(R.id.btnFactura)
+        btnAgregar.setOnClickListener {
+            val intent = Intent(this, FacturaActivity::class.java)
+            startActivity(intent)
+        }
+        val btnAgregar2 = findViewById<Button>(R.id.btnFactura2)
+        btnAgregar2.setOnClickListener {
+            val intent = Intent(this, FacturaActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
