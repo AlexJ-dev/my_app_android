@@ -3,17 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5DC">
+    android:background="#F5F5DC"
+    android:padding="8dp">
 
     <!-- Botón retroceder arriba a la izquierda -->
-    <ImageButton
-        android:id="@+id/btnBack"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:contentDescription="Volver"
-        android:layout_marginVertical="12dp"
-        android:src="@drawable/back_icon" />
+        android:gravity="start"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back_icon"/>
+    </LinearLayout>
 
 
     <androidx.cardview.widget.CardView
@@ -27,9 +33,9 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="Imagen principal"
             android:scaleType="fitCenter"
-            android:src="@drawable/fondodecarta"
-            android:contentDescription="Imagen principal" />
+            android:src="@drawable/fondodecarta" />
     </androidx.cardview.widget.CardView>
 
 

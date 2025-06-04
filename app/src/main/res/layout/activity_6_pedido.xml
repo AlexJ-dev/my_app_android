@@ -8,14 +8,19 @@
     android:gravity="center"
     android:background="#F5F5DC">
 
-    <ImageButton
-        android:id="@+id/btnBack"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:contentDescription="Volver"
-        android:layout_marginVertical="12dp"
-        android:src="@drawable/back_icon" />
+        android:gravity="start"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back_icon"/>
+    </LinearLayout>
 
     <include
         android:id="@+id/textPedido"
