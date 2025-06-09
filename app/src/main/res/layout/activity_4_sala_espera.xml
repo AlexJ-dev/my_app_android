@@ -7,21 +7,14 @@
     android:gravity="center_horizontal"
     android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:layout_marginBottom="8dp">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/back_icon"/>
-    </LinearLayout>
-
-
+        android:background="@android:color/transparent"
+        android:src="@drawable/back_icon"
+        android:layout_gravity="start"
+        android:layout_marginBottom="12dp"/>
     <include
         android:id="@+id/textSala"
         layout="@layout/componente_imagen_logo">

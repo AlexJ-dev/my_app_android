@@ -43,7 +43,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:exported="true">
     </activity>
     <activity
-        android:name=".misPedidosActivity"
+        android:name=".MisPedidosActivity"
         android:exported="true">
     </activity>
 

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +45,7 @@ class CategoryActivity : AppCompatActivity() {
         btnPedido.text = "Ver Pedido"
         btnPedido.visibility = View.VISIBLE
         btnPedido.setOnClickListener {
-            val intent = Intent(this, misPedidosActivity::class.java)
+            val intent = Intent(this, MisPedidosActivity::class.java)
             startActivity(intent)
         }
 
