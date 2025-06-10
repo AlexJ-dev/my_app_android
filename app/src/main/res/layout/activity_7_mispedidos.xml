@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
     android:background="#F5F5DC"
+    android:fitsSystemWindows="true"
     android:gravity="center_horizontal">
 
     <!-- Botón de regreso -->
@@ -16,10 +16,12 @@
         android:background="@android:color/transparent"
         android:src="@drawable/back_icon"
         android:layout_gravity="start"
-        android:layout_marginBottom="12dp"/>
+        android:layout_margin="12dp"/>
 
     <!-- Logo -->
-    <include layout="@layout/componente_imagen_logo"/>
+    <include
+        android:id="@+id/textMisPedidos"
+        layout="@layout/componente_imagen_logo"/>
 
     <!-- Lista de pedidos en RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
@@ -28,5 +30,14 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:paddingTop="16dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:menu="@menu/menu_navigation"
+        app:itemIconTint="@color/gray_background"
+        app:itemTextColor="@color/gray_background"/>
 
 </LinearLayout>

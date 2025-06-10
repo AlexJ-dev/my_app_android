@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SalaActivity : AppCompatActivity() {
 
@@ -66,5 +67,25 @@ class SalaActivity : AppCompatActivity() {
             val intent = Intent(this, CategoryActivity::class.java)
             startActivity(intent)
         }
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MesasActivity::class.java))
+                    true
+                }
+                R.id.nav_menu -> {
+                    startActivity(Intent(this, CategoryActivity::class.java))
+                    true
+                }
+                R.id.nav_user -> {
+                    startActivity(Intent(this, UserActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 }

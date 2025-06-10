@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica_04.databinding.Activity6PedidoBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class PedidoActivity : AppCompatActivity() {
@@ -64,6 +65,9 @@ class PedidoActivity : AppCompatActivity() {
         val comidas = pedidosList.filter { it.categoria == "Comidas" }.toMutableList()
         val bebidas = pedidosList.filter { it.categoria == "Bebidas" }.toMutableList()
 
+
+
+
         // Configurar adaptadores
         comidasAdapter = PedidoAdapter(comidas)
         bebidasAdapter = PedidoAdapter(bebidas)
@@ -99,6 +103,26 @@ class PedidoActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@PedidoActivity, LinearLayoutManager.VERTICAL, false)
             adapter = bebidasAdapter
         }
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MesasActivity::class.java))
+                    true
+                }
+                R.id.nav_menu -> {
+                    startActivity(Intent(this, CategoryActivity::class.java))
+                    true
+                }
+                R.id.nav_user -> {
+                    startActivity(Intent(this, UserActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
 
     }
 
@@ -106,6 +130,8 @@ class PedidoActivity : AppCompatActivity() {
         val sdf = java.text.SimpleDateFormat("dd/MM/yyyy")
         return sdf.format(java.util.Date())
     }
+
+
 
 
 //      pedidoAdapter = PedidoAdapter(pedidosList)

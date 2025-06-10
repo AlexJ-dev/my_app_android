@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:background="#F5F5DC">
 
@@ -15,7 +15,7 @@
         android:background="@android:color/transparent"
         android:src="@drawable/back_icon"
         android:layout_gravity="start"
-        android:layout_marginBottom="12dp"/>
+        android:layout_margin="12dp"/>
 
     <include
         android:id="@+id/textPedido"
@@ -128,5 +128,14 @@
             android:backgroundTint="@color/yellow_background"
             android:textColor="@android:color/black"/>
     </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:menu="@menu/menu_navigation"
+        app:itemIconTint="@color/gray_background"
+        app:itemTextColor="@color/gray_background"/>
+
 
 </LinearLayout>

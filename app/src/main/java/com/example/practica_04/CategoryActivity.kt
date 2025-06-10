@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CategoryActivity : AppCompatActivity() {
     private lateinit var dishAdapter: DishAdapter
@@ -47,6 +48,26 @@ class CategoryActivity : AppCompatActivity() {
         btnPedido.setOnClickListener {
             val intent = Intent(this, MisPedidosActivity::class.java)
             startActivity(intent)
+        }
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MesasActivity::class.java))
+                    true
+                }
+                R.id.nav_menu -> {
+                    startActivity(Intent(this, CategoryActivity::class.java))
+                    true
+                }
+                R.id.nav_user -> {
+                    startActivity(Intent(this, UserActivity::class.java))
+                    true
+                }
+                else -> false
+            }
         }
 
     }

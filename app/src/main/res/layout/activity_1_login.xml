@@ -5,6 +5,7 @@
     android:background="@color/beige_background"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:fitsSystemWindows="true"
     android:padding="30dp">
 
     <include
