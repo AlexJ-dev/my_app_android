@@ -24,26 +24,5 @@ class FacturaActivity : AppCompatActivity() {
         val textFactura =  findViewById<View>(R.id.textFactura)
         textFactura?.findViewById<TextView>(R.id.texto)?.text="Blazing Coast"
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    startActivity(Intent(this, MesasActivity::class.java))
-                    true
-                }
-                R.id.nav_menu -> {
-                    startActivity(Intent(this, CategoryActivity::class.java))
-                    true
-                }
-                R.id.nav_user -> {
-                    startActivity(Intent(this, UserActivity::class.java))
-                    true
-                }
-                else -> false
-            }
-        }
-
-
     }
 }

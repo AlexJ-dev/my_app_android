@@ -244,14 +244,7 @@
                 android:textColor="@android:color/white" />
         </LinearLayout>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:menu="@menu/menu_navigation"
-            app:itemIconTint="@color/black"
-            app:itemTextColor="@color/black"/>
 
     </LinearLayout>
+
 </ScrollView>
